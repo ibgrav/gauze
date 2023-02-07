@@ -1,4 +1,8 @@
-import { render } from "./render";
+import "./main.css";
 
-const element = document.getElementById("root")!;
-render(element);
+import { render } from "preact";
+import { App } from "./components/App";
+
+const root = document.getElementById("root")!;
+
+render(<App />, root);

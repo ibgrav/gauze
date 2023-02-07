@@ -3,15 +3,21 @@
 
   "compilerOptions": {
     "jsx": "react-jsx",
+    "jsxImportSource": "preact",
 
-    "target": "ESNext",
     "module": "ESNext",
+    "target": "ESNext",
     "moduleResolution": "Node",
+
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
 
     "strict": true,
     "noEmit": true,
+    "skipLibCheck": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "noUncheckedIndexedAccess": true
+    "useDefineForClassFields": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true
   }
 }
