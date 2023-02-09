@@ -1,3 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+* {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+main {
+  margin: 2rem auto;
+  width: 360px;
+  height: 360px;
+  display: grid;
+  grid-template-rows: repeat(var(--rows), 1fr);
+  grid-template-columns: repeat(var(--cols), 1fr);
+
+  & div {
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      border-width: 2px;
+      border-style: solid;
+    }
+
+    /* CENTER */
+    &[data-tile="var(--middle-tile)"] {
+      background: red;
+    }
+  }
+}
