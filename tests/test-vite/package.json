@@ -1,0 +1,16 @@
+{
+  "name": "test-vite",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "gauze": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "4.9.3",
+    "vite": "4.1.0"
+  }
+}

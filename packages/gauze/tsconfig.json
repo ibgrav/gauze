@@ -2,14 +2,11 @@
   "include": ["src"],
 
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact",
-
     "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
 
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": ["ESNext"],
 
     "strict": true,
     "noEmit": true,

@@ -1,0 +1,39 @@
+{
+  "name": "gauze",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Isaac Graves",
+  "packageManager": "pnpm@7.27.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "typescript": "4.9.5",
+    "vite": "4.1.1",
+    "vite-plugin-dts": "1.7.2"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "jsx-runtime"
+  ],
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "default": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js"
+    },
+    "./jsx-runtime": {
+      "types": "./dist/jsx-runtime.d.ts",
+      "import": "./dist/esm/jsx-runtime.mjs",
+      "default": "./dist/esm/jsx-runtime.mjs",
+      "require": "./dist/cjs/jsx-runtime.js"
+    }
+  }
+}
