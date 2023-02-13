@@ -6,7 +6,7 @@
   "packageManager": "pnpm@7.27.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite build --watch",
     "build": "vite build"
   },
   "devDependencies": {

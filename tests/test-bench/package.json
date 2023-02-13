@@ -1,0 +1,12 @@
+{
+  "name": "bench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.mjs"
+  },
+  "devDependencies": {
+    "benny": "3.7.1",
+    "gauze": "workspace:*"
+  }
+}

@@ -1,3 +1,6 @@
-import "./jsx";
+import type * as JSX from "./types";
+export { type JSX };
 
-export * from "./jsx-runtime";
+export { render } from "./render";
+
+export { Fragment, h } from "./jsx";
