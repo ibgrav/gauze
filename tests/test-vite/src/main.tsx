@@ -1,18 +1,38 @@
-import { render } from "gauze";
+import { renderToString, defineComponent, addComponentListeners } from "gauze";
 
-const Message = () => (
-  <h1 className="text-lg">
-    Hello, World! <span>second child</span>
-  </h1>
+interface ButtonProps {
+  count: number;
+}
+
+const Button = defineComponent<ButtonProps>("button", ({ count }) => {
+  return <button>{count}</button>;
+});
+
+console.log(<Button count={0} />);
+
+const Message = ({ count }: { count: number }) => (
+  <pre className="text-lg">
+    <span style={{ color: "red", fontFamily: "arial" }}>message</span> {count}
+  </pre>
 );
 
 export const Main = () => (
-  <main>
-    <Message />
-  </main>
+  <>
+    <Button count={0} />
+    <h1>Hello, World!</h1>
+    <main>
+      {[...Array(10)].map((_, i) => (
+        <Message count={i} />
+      ))}
+    </main>
+  </>
 );
 
-console.log(<Main />);
+function renderToRoot() {
+  const result = renderToString(<Main />);
+  document.getElementById("root")!.innerHTML = result;
 
-const root = document.getElementById("root")!;
-root.innerHTML = render(<Main />);
+  addComponentListeners();
+}
+
+document.getElementById("render")?.addEventListener("click", renderToRoot);

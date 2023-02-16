@@ -12,12 +12,13 @@ export type Props<P> = P & InherentProps;
 
 export type Component<P> = (props: Props<P>) => Element;
 
-export type Element = [Symbol, Type, Props<unknown>];
+export type Element = [string, Type, Props<unknown>];
 
 export interface InherentProps {
   css?: string;
   children?: Children;
   className?: Attribute;
+  "data-component"?: string;
 }
 
 export type DOMCSSProperties = {

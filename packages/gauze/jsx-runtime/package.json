@@ -1,14 +1,14 @@
 {
   "name": "jsx-runtime",
-  "types": "./../dist/types/jsx-runtime.d.ts",
-  "main": "./../dist/cjs/jsx-runtime.js",
-  "module": "./../dist/esm/jsx-runtime.mjs",
+  "types": "./dist/jsx-runtime.d.ts",
+  "main": "./dist/jsx-runtime.umd.js",
+  "module": "./dist/jsx-runtime.mjs",
   "exports": {
     ".": {
-      "types": "./../dist/types/jsx-runtime.d.ts",
-      "import": "./../dist/esm/jsx-runtime.mjs",
-      "default": "./../dist/esm/jsx-runtime.mjs",
-      "require": "./../dist/cjs/jsx-runtime.js"
+      "types": "./dist/jsx-runtime.d.ts",
+      "import": "./dist/jsx-runtime.mjs",
+      "default": "./dist/jsx-runtime.umd.js",
+      "require": "./dist/jsx-runtime.umd.js"
     }
   }
 }

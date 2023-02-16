@@ -1,6 +1,6 @@
 import type * as JSX from "./types";
 export { type JSX };
 
-export { render } from "./render";
-
+export { renderToString } from "./render";
+export { defineComponent, addComponentListeners } from "./component";
 export { Fragment, h } from "./jsx";

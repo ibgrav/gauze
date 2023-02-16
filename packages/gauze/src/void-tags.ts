@@ -1,8 +1,9 @@
-export const voidTags = [
+export const voidTags = new Set([
   "area",
   "base",
   "br",
   "col",
+  "command",
   "embed",
   "hr",
   "img",
@@ -14,4 +15,4 @@ export const voidTags = [
   "source",
   "track",
   "wbr",
-];
+]);

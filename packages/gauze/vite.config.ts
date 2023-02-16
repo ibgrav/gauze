@@ -1,32 +1,22 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+import { version } from "./package.json";
+
+const IS_RUNTIME = Boolean(process.env.RUNTIME);
 
 export default defineConfig({
-  plugins: [dts({ outputDir: "dist/types" })],
+  plugins: [dts({ outputDir: IS_RUNTIME ? "jsx-runtime/dist" : "dist", exclude: ["src/env.d.ts"] })],
+  define: {
+    "process.env.GAUZE_JSX_KEY": `"__g_${version}"`,
+  },
   build: {
-    minify: true,
-    sourcemap: false,
-    rollupOptions: {
-      input: ["src/index.ts", "src/jsx-runtime.ts"],
-      preserveEntrySignatures: "strict",
-      output: [
-        {
-          format: "esm",
-          dir: "dist/esm",
-          preserveModules: true,
-          preserveModulesRoot: "src",
-          entryFileNames: "[name].mjs",
-          chunkFileNames: "[name].mjs",
-        },
-        {
-          format: "cjs",
-          dir: "dist/cjs",
-          preserveModules: true,
-          preserveModulesRoot: "src",
-          entryFileNames: "[name].js",
-          chunkFileNames: "[name].js",
-        },
-      ],
+    emptyOutDir: false,
+    outDir: IS_RUNTIME ? "jsx-runtime/dist" : "dist",
+    lib: {
+      formats: ["es", "umd"],
+      fileName: IS_RUNTIME ? "jsx-runtime" : "index",
+      name: IS_RUNTIME ? "jsxRuntime" : "Gauze",
+      entry: IS_RUNTIME ? "src/jsx-runtime.ts" : "src/index.ts",
     },
   },
 });
