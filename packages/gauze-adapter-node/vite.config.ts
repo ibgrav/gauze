@@ -2,15 +2,16 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
-  plugins: [dts({ outputDir: "dist", exclude: ["src/env.d.ts"] })],
+  plugins: [dts({ outputDir: "dist" })],
   build: {
+    minify: false,
     emptyOutDir: false,
+    reportCompressedSize: false,
     outDir: "dist",
     lib: {
-      formats: ["es", "umd"],
+      formats: ["es", "cjs"],
       fileName: "index",
-      name: "Gauze",
-      entry: ["src/index.ts"],
+      entry: "src/index.ts",
     },
   },
 });

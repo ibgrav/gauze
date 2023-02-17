@@ -1,5 +1,5 @@
 {
-  "name": "gauze",
+  "name": "gauze-render-react-node",
   "version": "0.0.0",
   "license": "MIT",
   "author": "Isaac Graves",
@@ -9,30 +9,29 @@
   },
   "devDependencies": {
     "@types/node": "^18.13.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
     "config": "workspace:*",
-    "fast-glob": "^3.2.12",
-    "gauze-adapter-node": "workspace:*",
-    "gauze-render-react-node": "workspace:*",
+    "gauze": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "4.9.5",
     "vite": "4.1.1",
     "vite-plugin-dts": "1.7.2"
-  },
-  "bin": {
-    "gauze-dev": "./bin/dev.cjs"
   },
   "sideEffects": false,
   "files": [
     "dist"
   ],
   "types": "./dist/index.d.ts",
-  "main": "./dist/index.umd.js",
+  "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "default": "./dist/index.umd.js",
-      "require": "./dist/index.umd.js"
+      "default": "./dist/index.js",
+      "require": "./dist/index.js"
     }
   }
 }

@@ -3,7 +3,7 @@
   "packageManager": "pnpm@7.27.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm -F gauze build:runtime && pnpm -r --parallel dev"
+    "dev": "pnpm -r --parallel dev"
   },
   "devDependencies": {
     "prettier": "2.8.3"

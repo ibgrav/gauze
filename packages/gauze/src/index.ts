@@ -1,6 +1,3 @@
-import type * as JSX from "./types";
-export { type JSX };
+export { type GauzeRequest, type GauzeResponse, type GauzeHandler } from "./types";
 
-export { renderToString } from "./render";
-export { defineComponent, addComponentListeners } from "./component";
-export { Fragment, h } from "./jsx";
+export { handler } from "./handler";
